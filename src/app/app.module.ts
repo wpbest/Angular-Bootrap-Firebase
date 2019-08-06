@@ -14,10 +14,16 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 
-import { NgbModule, NgbAlertModule, NgbCarouselModule, NgbCollapseModule, NgbButtonsModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule,
+         NgbAlertModule,
+         NgbCarouselModule,
+         NgbCollapseModule,
+         NgbButtonsModule,
+         NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -42,7 +48,8 @@ import { FormsModule } from '@angular/forms';
     NgbCollapseModule,
     NgbButtonsModule,
     NgbDropdownModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
