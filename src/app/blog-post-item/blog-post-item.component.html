@@ -32,12 +32,12 @@
 <!-- Single Comment -->
 <div *ngIf="blogPost.blogComment">
   <div class="media mb-4" *ngFor="let comment of blogComment; let i = index">
-    <mb-blog-comment
+    <app-blog-comment
       [comment]="comment.comment"
       [id]="i"
       [commentId]="blogComment?.length - i - 1"
       [commentDate]="comment.date"
       [displayCommentName]="comment.user">
-    </mb-blog-comment>
+    </app-blog-comment>
   </div>
 </div>
