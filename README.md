@@ -33,6 +33,92 @@ ng new angular-bootstrap-firebase --routing --style scss --skip-install --skip-g
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
+```
+ng generate component header -m app
+ng generate component footer -m app
+ng generate component carousel -m app
+ng generate component page-header -m app
+ng generate service auth/auth-user
+```
+
+## Add Bootsrap
+
+```
+npm install --save bootstrap
+```
+
+Import the Bootstrap styles in the src/styles.css file by adding the following code:
+
+```
+@import "~bootstrap/dist/css/bootstrap.css";  
+```
+
+### Add Firebase hosting
+
+Add the needed packages
+
+```
+npm install --save firebase @angular/fire 
+```
+
+### Import the Angular Fire libraries
+
+Modify app.module.ts to import the Firebase libraries. Add import for environment
+
+```
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+
+@NgModule({
+  imports: [
+    ...
+    AngularFireModule.initializeApp(environment.firebaseConfig), // initialize
+    AngularFirestoreModule, // firestore
+    AngularFireAuthModule, // auth
+    AngularFireStorageModule // storage
+  ],
+  ...
+})  
+```
+
+Modify environment.ts and environment.prod.ts and add the firebase credentials.
+
+environment.ts:
+```
+export const environment = {
+  production: false,
+  firebase: {
+    apiKey: '',
+    authDomain: '',
+    databaseURL: '',
+    projectId: '',
+    storageBucket: '',
+    messagingSenderId: '',
+    appId: ''
+  }
+};
+```
+
+environment.prod.ts
+
+```
+export const environment = {
+  production: true,
+  firebase: {
+    apiKey: '',
+    authDomain: '',
+    databaseURL: '',
+    projectId: '',
+    storageBucket: '',
+    messagingSenderId: '',
+    appId: ''
+  }
+};
+```
+
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
