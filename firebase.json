@@ -10,7 +10,7 @@
     ]
   },
   "hosting": {
-    "public": "dist",
+    "public": "dist/angular-bootstrap-firebase",
     "ignore": [
       "firebase.json",
       "**/.*",
