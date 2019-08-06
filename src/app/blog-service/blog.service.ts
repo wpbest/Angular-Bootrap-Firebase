@@ -4,6 +4,8 @@ import { BlogPost } from './blog-post.model';
 import { BlogComment } from './blog-comment.model';
 import { BlogReply } from './blog-reply.model';
 import * as firebase from 'firebase';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -277,7 +279,7 @@ export class BlogService {
   }
 
   getComment(postId: number, id: number) {
-    return this.blogPosts[postId].blogComment[id]
+    return this.blogPosts[postId].blogComment[id];
   }
 
   getBlogPosts() {
@@ -288,21 +290,18 @@ export class BlogService {
   constructor(private http: HttpClient) {}
 
   storeBlogData() {
-    return this.http.post('https://mb-angular-b4180.firebaseio.com/blogData.json', this.blogPosts)
+    return this.http.post('https://mb-angular-b4180.firebaseio.com/blogData.json', this.blogPosts);
   }
 
-  getBlogData() {
+  getBlogData(): Observable<any> {
     return this.http.get('https://mb-angular-b4180.firebaseio.com/blogData.json')
-      .map(
-        (response: Response) => {
-          const data = response.json();
-          return data;
-        }
-      )
-      .catch(
-        (error: Response) => {
-          return Observable.throw('Error!!! if you want to view type of error change this log.')
-        }
-      )
+      .pipe(
+        map(
+          (response: Response) => {
+            const data = response.json();
+            return data;
+          }
+        )
+    );
   }
 }

@@ -2,6 +2,7 @@ import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/r
 import { Injectable } from '@angular/core';
 import { BlogPost } from './blog-post.model';
 import { BlogService } from './blog.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,6 @@ import { BlogService } from './blog.service';
 export class ResolverService implements Resolve<BlogPost[]> {
   constructor(private blogService: BlogService) {}
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<BlogPost[]> | Promise<BlogPost[]> | BlogPost[] {
-    return this.blogService.getBlogData()
-  }  
+    return this.blogService.getBlogData();
+  }
 }
