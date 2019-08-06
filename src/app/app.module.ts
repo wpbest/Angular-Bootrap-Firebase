@@ -14,7 +14,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 
-import { NgbModule, NgbAlertModule, NgbCarouselModule, NgbCollapseModule, NgbButtonsModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbAlertModule, NgbCarouselModule, NgbCollapseModule, NgbButtonsModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,8 @@ import { NgbModule, NgbAlertModule, NgbCarouselModule, NgbCollapseModule, NgbBut
     NgbAlertModule,
     NgbCarouselModule,
     NgbCollapseModule,
-    NgbButtonsModule
+    NgbButtonsModule,
+    NgbDropdownModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

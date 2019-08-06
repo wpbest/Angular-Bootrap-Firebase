@@ -22,7 +22,7 @@
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Portfolio
         </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+        <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu aria-labelledby="navbarDropdownPortfolio">
           <a class="dropdown-item" routerLinkActive="active" [routerLink]="['/portfolio-1-col', 'page', 1]">1 Column
             Portfolio</a>
           <a class="dropdown-item" routerLinkActive="active" routerLink="/portfolio-2-col">2 Column Portfolio</a>
@@ -48,7 +48,7 @@
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Other Pages
         </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+        <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
           <a class="dropdown-item" routerLinkActive="active" routerLink="/full-width">Full Width Page</a>
           <a class="dropdown-item" routerLinkActive="active" routerLink="/sidebar">Sidebar Page</a>
           <a class="dropdown-item" routerLinkActive="active" routerLink="/faq">FAQ</a>
