@@ -6,6 +6,7 @@ import { BlogService } from '../blog-service/blog.service';
 import { BlogPost } from '../blog-service/blog-post.model';
 import { BlogComment } from '../blog-service/blog-comment.model';
 import { AuthUserService } from '../auth/auth-user.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-blog-post-item',
@@ -29,27 +30,27 @@ export class BlogPostItemComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.paramsId = +this.route.snapshot.params['id'];
+    this.paramsId = +this.route.snapshot.params.id;
     this.resolveSubscription = this.route.data
       .subscribe(
         (data: Data) => {
-          this.blogPost = data['blogPost'][this.paramsId - 1];
-          if (data['blogPost'][this.paramsId - 1].blogComment) {
-            this.blogComment = data['blogPost'][this.paramsId - 1].blogComment.reverse()
+          this.blogPost = data.blogPost[this.paramsId - 1];
+          if (data.blogPost[this.paramsId - 1].blogComment) {
+            this.blogComment = data.blogPost[this.paramsId - 1].blogComment.reverse();
           }
         }
       );
     this.commentForm = new FormGroup({
-      'textareaComment': new FormControl(null)
+      textareaComment: new FormControl(null)
     });
   }
 
   onSubmit() {
     const commentLength = Object.keys(this.blogComment).length;
     if (commentLength === null) {
-      this.key = 0
-    }else {
-      this.key = commentLength
+      this.key = 0;
+    } else {
+      this.key = commentLength;
     }
     const id = this.paramsId - 1;
     const blogComment = this.commentForm.get('textareaComment').value;
@@ -60,9 +61,9 @@ export class BlogPostItemComponent implements OnInit, OnDestroy {
       this.blogService.getBlogData()
         .subscribe(
           (data: Data) => {
-            this.blogComment = data[this.paramsId - 1].blogComment.reverse()
+            this.blogComment = data[this.paramsId - 1].blogComment.reverse();
           }
-        )
+        );
     }, 3000);
   }
 

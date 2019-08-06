@@ -6,6 +6,7 @@ import { BlogService } from '../blog-service/blog.service';
 import { BlogReply } from '../blog-service/blog-reply.model';
 import { BlogPost } from '../blog-service/blog-post.model';
 import { AuthUserService } from '../auth/auth-user.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-blog-comment',
@@ -29,7 +30,7 @@ export class BlogCommentComponent implements OnInit, OnDestroy {
   constructor(private route: ActivatedRoute, private blogService: BlogService, private authUserService: AuthUserService) { }
 
   ngOnInit() {
-    this.postId = +this.route.snapshot.params['id'];
+    this.postId = +this.route.snapshot.params.id;
     this.dataSubscription = this.blogService.getBlogData()
       .subscribe(
         (blogPost: BlogPost[]) => {
@@ -39,8 +40,8 @@ export class BlogCommentComponent implements OnInit, OnDestroy {
         }
       );
     this.replyForm = new FormGroup({
-    'textareaReply': new FormControl(null)
-    })
+    textareaReply: new FormControl(null)
+    });
 
   }
 
@@ -64,9 +65,9 @@ export class BlogCommentComponent implements OnInit, OnDestroy {
       this.blogService.getBlogData()
         .subscribe(
           (data: Data) => {
-            this.replyComment = data[this.postId - 1].blogComment[this.commentId].reply.reverse()
+            this.replyComment = data[this.postId - 1].blogComment[this.commentId].reply.reverse();
           }
-        )
+        );
     }, 3000);
   }
 
