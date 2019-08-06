@@ -1,66 +1,71 @@
 <!-- Navigation -->
-<nav class="navbar fixed-top navbar-toggleable-md navbar-inverse">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" (click)="toggleState()" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="container">
-          <a class="navbar-brand nav-link" routerLink="/">Start Bootstrap</a>
-          <div class="collapse navbar-collapse" [ngClass]="{'show': isShow}" id="navbarExample">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" routerLink="/about">About</a>
-              </li>
-              <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" routerLink="/services">Services</a>
-              </li>
-              <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" routerLink="/contact">Contact</a>
-              </li>
-              <li class="nav-item dropdown" ngbDropdown>
-                <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdownPortfolio" style="cursor: pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Portfolio
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                  <a class="dropdown-item" routerLinkActive="active" [routerLink]="['/portfolio-1-col', 'page', 1]">1 Column Portfolio</a>
-                  <a class="dropdown-item" routerLinkActive="active" routerLink="/portfolio-2-col">2 Column Portfolio</a>
-                  <a class="dropdown-item" routerLinkActive="active" routerLink="/portfolio-3-col">3 Column Portfolio</a>
-                  <a class="dropdown-item" routerLinkActive="active" routerLink="/portfolio-4-col">4 Column Portfolio</a>
-                  <a class="dropdown-item" routerLinkActive="active" [routerLink]="['/portfolio-item', 'page', 1]" [queryParams]="{project: 1}">Single Portfolio Item</a>
-                </div>
-              </li>
-              <li class="nav-item dropdown" ngbDropdown *ngIf="authUserService.isAuthenticated()">
-                <a class="nav-link dropdown-toggle" ngbDropdownToggle style="cursor: pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Blog
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                  <a class="dropdown-item" routerLinkActive="active" routerLink="/blog-home-one">Blog Home 1</a>
-                  <a class="dropdown-item" routerLinkActive="active" routerLink="/blog-home-two">Blog Home 2</a>
-                  <a class="dropdown-item" routerLinkActive="active" routerLink="/blog-post">Blog Post</a>
-                </div>
-              </li>
-              <li class="nav-item dropdown" ngbDropdown>
-                <a class="nav-link dropdown-toggle" ngbDropdownToggle style="cursor: pointer" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Other Pages
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                  <a class="dropdown-item" routerLinkActive="active" routerLink="/full-width">Full Width Page</a>
-                  <a class="dropdown-item" routerLinkActive="active" routerLink="/sidebar">Sidebar Page</a>
-                  <a class="dropdown-item" routerLinkActive="active" routerLink="/faq">FAQ</a>
-                  <a class="dropdown-item" routerLinkActive="active" routerLink="/404">404</a>
-                  <a class="dropdown-item" routerLinkActive="active" routerLink="/pricing">Pricing Table</a>
-                </div>
-              </li>
-              <li class="nav-item" *ngIf="authUserService.isAuthenticated()">
-              <a class="nav-link" style="cursor: pointer" (click)="onLogout()">Logout</a></li>
-      
-              <ng-template [ngIf]="!authUserService.isAuthenticated()">
-                <li class="nav-item">
-                  <a class="nav-link" style="cursor: pointer" routerLink="/signup">Register</a></li>
-                <li class="nav-item">
-                  <a class="nav-link" style="cursor: pointer" routerLink="/signin">Login</a></li>
-              </ng-template>
-            </ul>
-          </div>
+<nav class=" navbar navbar-expand-lg navbar-light bg-light">
+  <button (click)="isCollapsed = !isCollapsed" class="navbar-toggler" type="button"
+   aria-controls="navbarSupportedContent" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand nav-link" routerLink="/">Start Bootstrap</a>
+  <div class="collapse navbar-collapse" [ngbCollapse]="isCollapsed" id="navbarExample">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/about">About</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/services">Services</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/contact">Contact</a>
+      </li>
+      <li class="nav-item dropdown" ngbDropdown>
+        <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdownPortfolio" style="cursor: pointer"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Portfolio
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+          <a class="dropdown-item" routerLinkActive="active" [routerLink]="['/portfolio-1-col', 'page', 1]">1 Column
+            Portfolio</a>
+          <a class="dropdown-item" routerLinkActive="active" routerLink="/portfolio-2-col">2 Column Portfolio</a>
+          <a class="dropdown-item" routerLinkActive="active" routerLink="/portfolio-3-col">3 Column Portfolio</a>
+          <a class="dropdown-item" routerLinkActive="active" routerLink="/portfolio-4-col">4 Column Portfolio</a>
+          <a class="dropdown-item" routerLinkActive="active" [routerLink]="['/portfolio-item', 'page', 1]"
+            [queryParams]="{project: 1}">Single Portfolio Item</a>
         </div>
-      </nav>
-      
+      </li>
+      <li class="nav-item dropdown" ngbDropdown *ngIf="authUserService.isAuthenticated()">
+        <a class="nav-link dropdown-toggle" ngbDropdownToggle style="cursor: pointer" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Blog
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+          <a class="dropdown-item" routerLinkActive="active" routerLink="/blog-home-one">Blog Home 1</a>
+          <a class="dropdown-item" routerLinkActive="active" routerLink="/blog-home-two">Blog Home 2</a>
+          <a class="dropdown-item" routerLinkActive="active" routerLink="/blog-post">Blog Post</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown" ngbDropdown>
+        <a class="nav-link dropdown-toggle" ngbDropdownToggle style="cursor: pointer" id="navbarDropdownBlog"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Other Pages
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+          <a class="dropdown-item" routerLinkActive="active" routerLink="/full-width">Full Width Page</a>
+          <a class="dropdown-item" routerLinkActive="active" routerLink="/sidebar">Sidebar Page</a>
+          <a class="dropdown-item" routerLinkActive="active" routerLink="/faq">FAQ</a>
+          <a class="dropdown-item" routerLinkActive="active" routerLink="/404">404</a>
+          <a class="dropdown-item" routerLinkActive="active" routerLink="/pricing">Pricing Table</a>
+        </div>
+      </li>
+      <li class="nav-item" *ngIf="authUserService.isAuthenticated()">
+        <a class="nav-link" style="cursor: pointer" (click)="onLogout()">Logout</a></li>
+
+      <ng-template [ngIf]="!authUserService.isAuthenticated()">
+        <li class="nav-item">
+          <a class="nav-link" style="cursor: pointer" routerLink="/signup">Register</a></li>
+        <li class="nav-item">
+          <a class="nav-link" style="cursor: pointer" routerLink="/signin">Login</a></li>
+      </ng-template>
+    </ul>
+  </div>
+
+</nav>

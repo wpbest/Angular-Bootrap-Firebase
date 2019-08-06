@@ -2,20 +2,15 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
 body {
-    padding-top: 54px;
     background-color: #ffc98c;
   }
-  
+
   .card.h-100 {
     background-color: #ffe1bf;
   }
-  
-  @media (min-width: 992px) {
-    body {
-      padding-top: 56px;
-    }
-  }
-  
+
+
+
   .carousel-item {
     height: 65vh;
     min-height: 300px;
@@ -25,8 +20,7 @@ body {
     -o-background-size: cover;
     background-size: cover;
   }
-  
+
   .portfolio-item {
     margin-bottom: 30px;
   }
-  

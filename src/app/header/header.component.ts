@@ -10,10 +10,10 @@ import { AuthUserService } from '../auth/auth-user.service';
 export class HeaderComponent implements OnInit {
 
   isShow: boolean = false;
-  isCollapsed: boolean = true;
+  public isCollapsed: boolean = false;
   constructor(private router: Router,
               public authUserService: AuthUserService) {
-    this.isCollapsed = true;
+
   }
 
   ngOnInit() {
@@ -26,6 +26,6 @@ export class HeaderComponent implements OnInit {
   onLogout() {
     this.authUserService.logout();
     this.router.navigate(['/']);
-  }  
+  }
 
 }
