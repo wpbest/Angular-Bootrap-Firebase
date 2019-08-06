@@ -8,7 +8,7 @@ import { AuthUserService } from '../auth/auth-user.service';
   styleUrls: ['./signin.component.scss']
 })
 export class SigninComponent implements OnInit {
-
+  ngForm: NgForm;
   constructor(private authUserService: AuthUserService) { }
 
   ngOnInit() {

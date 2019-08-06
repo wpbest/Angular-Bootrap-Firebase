@@ -17,6 +17,7 @@ import { environment } from '../environments/environment';
 import { NgbModule, NgbAlertModule, NgbCarouselModule, NgbCollapseModule, NgbButtonsModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { SignupComponent } from './signup/signup.component';
     NgbCollapseModule,
     NgbButtonsModule,
     NgbDropdownModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,7 +9,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class AuthUserService {
 
   token: string;
-  diplayName: string;  
+  diplayName: string;
 
   constructor(private router: Router,
               private afAuth: AngularFireAuth) { }
@@ -18,7 +18,7 @@ export class AuthUserService {
     this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .catch(
         error => console.log(error)
-      )
+      );
   }
 
   signinUser(email: string, password: string) {
@@ -32,22 +32,22 @@ export class AuthUserService {
           this.afAuth.auth.currentUser.getIdToken()
             .then(
               (token: string) => this.token = token
-            )
+            );
         }
       )
       .catch(
         error => console.log(error)
-      )
+      );
   }
 
   getToken() {
     this.afAuth.auth.currentUser.getIdToken()
       .then(
         (token: string) => {
-          this.token = token
+          this.token = token;
         }
       );
-    return this.token
+    return this.token;
   }
 
   isAuthenticated() {
@@ -56,7 +56,7 @@ export class AuthUserService {
 
   logout() {
     this.afAuth.auth.signOut();
-    this.token = null
+    this.token = null;
   }
 
 
