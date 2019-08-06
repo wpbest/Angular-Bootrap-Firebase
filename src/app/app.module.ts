@@ -15,6 +15,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 
 import { NgbModule, NgbAlertModule, NgbCarouselModule, NgbCollapseModule, NgbButtonsModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { NgbModule, NgbAlertModule, NgbCarouselModule, NgbCollapseModule, NgbBut
     HeaderComponent,
     FooterComponent,
     CarouselComponent,
-    PageHeaderComponent
+    PageHeaderComponent,
+    SigninComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
