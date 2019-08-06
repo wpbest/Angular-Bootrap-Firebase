@@ -39,6 +39,8 @@ ng generate component footer -m app
 ng generate component carousel -m app
 ng generate component page-header -m app
 ng generate service auth/auth-user
+ng generate component signin -m app
+ng generate component signup -m app
 ```
 
 ## Add Bootsrap
