@@ -1,0 +1,23 @@
+textarea::placeholder {
+    font-size: small;
+  }
+  
+  @keyframes pending {
+    0%   {color: silver;}
+    10%  {color: #000;}
+    20%  {color: silver;}
+    30%  {color: black;}
+    40%   {color: silver;}
+    50%  {color: #000;}
+    60%  {color: silver;}
+    70%  {color: black;}
+    80%  {color: silver;}
+    90% {color: black;}
+    100%  {color: silver;}
+  }
+  
+  .pending {
+    color: #000;
+    animation: pending 3s;
+  }
+  

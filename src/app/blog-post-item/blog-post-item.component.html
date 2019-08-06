@@ -1,0 +1,43 @@
+<!-- Preview Image -->
+<img class="img-fluid rounded" [src]="blogPost.imageUrl" alt="">
+<hr>
+<!-- Date/Time -->
+<p>Posted on {{ blogPost.date | date: 'longDate' }} at {{ blogPost.date | date: 'shortTime' }}</p>
+<hr>
+<!-- Post Content -->
+<p class="lead">{{ blogPost.descriptionParagraph }}</p>
+<p>{{ blogPost.descriptionParagraph }}</p>
+<p>{{ blogPost.descriptionParagraph }}</p>
+<blockquote class="blockquote">
+  <p class="mb-0">{{ blogPost.title }}</p>
+  <footer class="blockquote-footer">Someone famous in
+    <cite title="Source Title">Source Title</cite>
+  </footer>
+</blockquote>
+<p>{{ blogPost.descriptionParagraph }}</p>
+<p>{{ blogPost.descriptionParagraph }}</p>
+<hr>
+<!-- Comments Form -->
+<div class="card my-4">
+  <h5 class="card-header">Leave a Comment:</h5>
+  <div class="card-block">
+    <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <textarea formControlName="textareaComment" type="text" placeholder="Write a comment..."  class="form-control" rows="1"></textarea>
+      </div>
+      <button style="cursor: pointer" type="submit" class="btn btn-primary">Post</button>
+    </form>
+  </div>
+</div>
+<!-- Single Comment -->
+<div *ngIf="blogPost.blogComment">
+  <div class="media mb-4" *ngFor="let comment of blogComment; let i = index">
+    <mb-blog-comment
+      [comment]="comment.comment"
+      [id]="i"
+      [commentId]="blogComment?.length - i - 1"
+      [commentDate]="comment.date"
+      [displayCommentName]="comment.user">
+    </mb-blog-comment>
+  </div>
+</div>

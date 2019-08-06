@@ -1,0 +1,36 @@
+<div class="media mb-4">
+    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+    <div class="media-body">
+      <h5 class="mt-0">{{ displayCommentName }}</h5>
+      <span>
+      {{ comment }}
+      <a mbHighlight (click)="onReply(replyComment?.length)"><small>{{ isComment? 'Cancel' : 'Reply' }}</small></a>
+    </span>
+      <small style="margin-left: 2%; white-space: nowrap">{{ commentDate | date: 'medium' }}</small>
+      <form [formGroup]="replyForm" (ngSubmit)="onSubmit()" *ngIf="isComment">
+        <div class="form-group">
+            <textarea
+              placeholder="Write a comment..."
+              class="form-control"
+              rows="1"
+              type="text"
+              id="message"
+              formControlName="textareaReply"
+              autofocus
+            ></textarea>
+        </div>
+        <a mbHighlight (click)="onCallSubmit()">Post</a>
+      </form>
+      <div *ngIf="replyComment">
+        <div class="media mt-4" *ngFor="let reply of replyComment">
+          <app-blog-reply
+            [replyDate]="reply.date"
+            [reply]="reply.reply"
+            [displayReplyName]="reply.user"
+          ></app-blog-reply>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

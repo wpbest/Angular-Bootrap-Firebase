@@ -24,6 +24,14 @@ import { NgbModule,
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BlogPostComponent } from './blog-post/blog-post.component';
+import { BlogWidgetComponent } from './blog-widget/blog-widget.component';
+import { BlogRoutingModule } from './blog-routing.module';
+import { BlogPostItemComponent } from './blog-post-item/blog-post-item.component';
+import { BlogCommentComponent } from './blog-comment/blog-comment.component';
+import { BlogReplyComponent } from './blog-reply/blog-reply.component';
+import { HttpClientModule} from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +41,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CarouselComponent,
     PageHeaderComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    BlogPostComponent,
+    BlogWidgetComponent,
+    BlogPostItemComponent,
+    BlogCommentComponent,
+    BlogReplyComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +62,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NgbButtonsModule,
     NgbDropdownModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BlogRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
