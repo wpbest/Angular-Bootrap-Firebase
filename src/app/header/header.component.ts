@@ -9,10 +9,12 @@ import { AuthUserService } from '../auth/auth-user.service';
 })
 export class HeaderComponent implements OnInit {
 
-  isShow = false;
-  
+  isShow: boolean = false;
+  isCollapsed: boolean = true;
   constructor(private router: Router,
-              public authUserService: AuthUserService) { }
+              public authUserService: AuthUserService) {
+    this.isCollapsed = true;
+  }
 
   ngOnInit() {
   }
