@@ -9,7 +9,7 @@ export class PageHeaderComponent implements OnInit {
 
   @Input() pageActive = '';
   @Input() pageUrlActive = '';
-  
+
   constructor() { }
 
   ngOnInit() {

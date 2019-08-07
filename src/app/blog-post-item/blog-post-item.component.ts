@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-blog-post-item',
   templateUrl: './blog-post-item.component.html',
-  styleUrls: ['./blog-post-item.component.css']
+  styleUrls: ['./blog-post-item.component.scss']
 })
 export class BlogPostItemComponent implements OnInit, OnDestroy {
 

@@ -1,0 +1,38 @@
+<!-- Page Content -->
+
+  <!-- Content Row -->
+  <div class="row">
+    <!-- Sidebar Column -->
+    <div class="col-md-3">
+      <div class="list-group">
+        <a routerLink="/" class="list-group-item">Home</a>
+        <a routerLink="/about" class="list-group-item">About</a>
+        <a routerLink="/services" class="list-group-item">Services</a>
+        <a routerLink="contact" class="list-group-item">Contact</a>
+        <a [routerLink]="['/portfolio-1-col', 'page', 1]" class="list-group-item">1 Column Portfolio</a>
+        <a routerLink="/portfolio-2-col" class="list-group-item">2 Column Portfolio</a>
+        <a routerLink="/portfolio-3-col" class="list-group-item">3 Column Portfolio</a>
+        <a routerLink="/portfolio-4-col" class="list-group-item">4 Column Portfolio</a>
+        <a [routerLink]="['/portfolio-item', 'page', 1]" [queryParams]="{project: 1}" class="list-group-item">Single Portfolio Item</a>
+        <ng-template [ngIf]="authUserService.isAuthenticated()">
+          <a routerLink="/blog-home-one" class="list-group-item">Blog Home 1</a>
+          <a routerLink="/blog-home-two" class="list-group-item">Blog Home 2</a>
+          <a routerLink="/blog-post" class="list-group-item">Blog Post</a>
+        </ng-template>
+        <a routerLink="/full-width" class="list-group-item">Full Width Page</a>
+        <a routerLink="/sidebar" class="list-group-item active">Sidebar Page</a>
+        <a routerLink="/faq" class="list-group-item">FAQ</a>
+        <a routerLink="/404" class="list-group-item">404</a>
+        <a routerLink="/pricing" class="list-group-item">Pricing Table</a>
+      </div>
+    </div>
+    <!-- Content Column -->
+    <div class="col-md-9">
+      <h2>Section Heading</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, et temporibus, facere perferendis veniam beatae non debitis, numquam blanditiis necessitatibus vel mollitia dolorum laudantium, voluptate dolores iure maxime ducimus fugit.</p>
+    </div>
+  </div>
+  <!-- /.row -->
+
+  <hr>
+

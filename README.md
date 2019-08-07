@@ -38,18 +38,25 @@ ng generate component header -m app
 ng generate component footer -m app
 ng generate component carousel -m app
 ng generate component page-header -m app
+ng generate module auth/auth-routing --module app --flat
 ng generate service auth/auth-user
 ng generate component signin -m app
 ng generate component signup -m app
 ng generate component blog-post -m app
 ng generate component blog-widget -m app
-ng generate module blog-routing --module app --flat
 ng generate guard auth
 ng generate component blog-post-item -m app
 ng generate component blog-comment -m app
 ng generate component blog-reply -m app
 ng generate service blog-service/blog 
 ng generate service blog-service/resolver 
+ng generate module blog-service/blog-routing -m app --flat
+ng generate component home -m app
+ng generate component about -m app
+ng generate component contact -m app
+ng generate component sidebar -m app
+ng generate component faq -m app
+ng generate component page-not-found -m app
 ```
 
 ## Add Bootsrap

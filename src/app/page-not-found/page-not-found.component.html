@@ -1,0 +1,74 @@
+<div class="jumbotron">
+    <h1 class="display-1">404</h1>
+    <p>The page you're looking for could not be found. Here are some helpful links to get you back on track:</p>
+    <ul>
+      <li routerLinkActive="active">
+        <a routerLink="/">Home</a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/about">About</a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/services">Services</a>
+      </li>
+      <li routerLinkActive="">
+        <a routerLink="/contact">Contact</a>
+      </li>
+      <li>
+        Portfolio
+        <ul>
+          <li routerLinkActive="active">
+            <a [routerLink]="['/portfolio-1-col', 'page', 1]">1 Column Portfolio</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/portfolio-2-col">2 Column Portfolio</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/portfolio-3-col">3 Column Portfolio</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/portfolio-4-col">4 Column Portfolio</a>
+          </li>
+          <li routerLinkActive="active">
+            <a [routerLink]="['/portfolio-item', 'page', 1]" [queryParams]="{project: 1}">Single Portfolio Item</a>
+          </li>
+        </ul>
+      </li>
+      <li *ngIf="authUserService.isAuthenticated()">
+        Blog
+        <ul>
+          <li routerLinkActive="active">
+            <a routerLink="/blog-home-one">Blog Home 1</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/blog-home-two">Blog Home 2</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/blog-post">Blog Post</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Other Pages
+        <ul>
+          <li routerLinkActive="active">
+            <a routerLink="/full-width">Full Width Page</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/sidebar">Sidebar Page</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/faq">FAQ</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/404">404 Page</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/pricing-table">Pricing Table</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <!-- /.jumbotron -->
+  

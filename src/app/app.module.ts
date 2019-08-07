@@ -26,11 +26,19 @@ import { SignupComponent } from './signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BlogPostComponent } from './blog-post/blog-post.component';
 import { BlogWidgetComponent } from './blog-widget/blog-widget.component';
-import { BlogRoutingModule } from './blog-routing.module';
 import { BlogPostItemComponent } from './blog-post-item/blog-post-item.component';
 import { BlogCommentComponent } from './blog-comment/blog-comment.component';
 import { BlogReplyComponent } from './blog-reply/blog-reply.component';
 import { HttpClientModule} from '@angular/common/http';
+import { AuthRoutingModule } from './auth/auth-routing.module';
+import { BlogRoutingModule } from './blog-service/blog-routing.module';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { FaqComponent } from './faq/faq.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 
 
 @NgModule({
@@ -46,7 +54,13 @@ import { HttpClientModule} from '@angular/common/http';
     BlogWidgetComponent,
     BlogPostItemComponent,
     BlogCommentComponent,
-    BlogReplyComponent
+    BlogReplyComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    SidebarComponent,
+    FaqComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -63,8 +77,9 @@ import { HttpClientModule} from '@angular/common/http';
     NgbDropdownModule,
     FormsModule,
     ReactiveFormsModule,
-    BlogRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AuthRoutingModule,
+    BlogRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
